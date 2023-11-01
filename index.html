@@ -69,8 +69,9 @@
         showBanner: unityShowBanner,
       };
       var setCanvasSize = () => {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
+        const ratio = 2560 / 1440;
+        const width = Math.min(window.innerWidth, Math.floor(window.innerHeight * ratio));
+        const height = Math.floor(width / ratio);
         canvas.style.width = `${width}px`;
         canvas.style.height = `${height}px`;
       }
